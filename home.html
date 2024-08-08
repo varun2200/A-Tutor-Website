@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Tarang Bombale</title>
+    <link rel="stylesheet" href="home.css">
+    <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    
+</head>
+
+<body>
+    <header>
+        <div class="horizontal-gradient"></div>
+        <nav>
+                <div class="left" style="margin-inline-start: -43px;">
+                    <a href="home.html"><img src="home-7-24.png" style="margin:-1px" alt="Home Page Logo"></a>
+            <!-- <a href="/home.html">🎓</a> -->
+                <p class="name" style="margin-inline-start: 12px;">Tarang Bombale</p></div>
+            <div class="right">
+                <ul class="l1">
+                    <li><a href="explore-materials.html">Explore Materials</a></li>
+                    <!-- <li><a href="/testimonials.html">Testimonials</a></li> -->
+                    <li><a href="know-your-tutor.html">Know Your Tutor</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <!-- <div class="toggle_button">
+                    <i class="fa-regular fa-bars"></i>
+                </div> -->
+            </div>    
+        </nav>
+    </header>
+    
+    <main>
+        <section class="firstSection" style="margin-bottom: 200px;">
+            <div class="leftSection">
+                Hi, My name is <span style="color: rgb(197, 61, 197);">Tarang</span>
+                <div>and I am a passionate</div>
+                <span style="color: yellow;" id="element"></span>
+                <br>
+                <!-- <div class="buttons">
+                    <a href="know-your-tutor.html" style="--clr:rgb(197, 61, 197);"><button class="btn">Explore Materials</button></a>
+                </div> -->
+                <div class="buttons">
+                  <a href="explore-materials.html"><button class="btn" style = "--clr:rgb(197, 61, 197); max-width: 200px; max-height: 50px; min-height: 50px;min-width: 200px;">Explore Materials</button></a>
+                  <!-- <button class="btn"  onclick="openLink()">Visit Git-hub</button> -->
+              </div>
+            </div>
+            <div class="rightSection">
+                <!-- <img src="homo-logo.png" alt=""> -->
+                <img style="height:300px" src="emojisky.com-68196.png" alt="">
+            </div>
+        </section>
+    </main>
+
+
+    <footer>
+        <div class="hover"><h2 class="testimonial-heading">What Students Say? 💬</h2>
+        <div>
+            <div class="testimonials">
+              <div class="container">
+                <!-- Table -->
+                <table class="table" style="border-spacing: 24px;">
+                  <thead id="table-head3"></thead>
+                  <tbody id="table-body3"></tbody>
+                </table>
+                <!-- Table -->
+              </div>
+            </div>
+          </div></div>
+
+          <div>
+            <div><h2 id="contact" class="contact">Contact 🤝</h2>
+                <div class="icons" style="margin-inline-start: -14px;">
+                    <a href="https://www.instagram.com/tarangbombale/"><img style="width:35px; height:35px" src="instagram.256x256.png" alt=""></a>
+                    <a href=""><img style="width:35px; height:35px" src="gmail.256x256.png" alt=""></a>
+                    <a href=""><img style="width:35px; height:35px" src="twitter.256x256.png" alt=""></a>
+                </div>
+          </div>
+        
+    </footer>
+
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <!-- Setup and start animation! -->
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Developer', 'Problem Solver', 'Teacher!'],
+            typeSpeed: 50,
+        });
+
+        function openLink() {
+            window.open("https://github.com/Darsh-Bothra")
+        }
+    </script>
+
+    <!-- MDB ESSENTIAL -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.0/mdb.min.js"></script>
+  <!-- Google API -->
+  <script src="https://apis.google.com/js/api.js"></script>
+  <!-- easyData -->
+  <script type="text/javascript" src="em-notes.js"></script>
+
+  <!-- easyData - Creating table -->
+  <!--Notes-->
+  <script>
+    {
+      {
+        // Your API KEY
+        const API_KEY = "AIzaSyA70XQRT1sCDEYpmJynO5Cupn53uC6FTKU";
+
+        function displayResult2(response) {
+          let tableHead = "";
+          let tableBody = "";
+
+          response.result.values.forEach((row, index, column) => {
+            if (index===9) {
+              tableHead += "<tr>";
+              row.forEach((val) => (tableHead += "<th class='box'>" + val + "</th>"));
+              tableHead += "</tr>";
+            } else if(index===10){
+              tableBody += "<tr >";
+                // row.forEach((val) => (tableBody += "<td>" + val+ "</td>")); 
+              row.forEach((val) => (tableBody += "<td style='color:white'>" +val+ "</td>"));
+              tableBody += "</tr>";
+          }});
+    
+          document.getElementById("table-head3").innerHTML = tableHead;
+          document.getElementById("table-body3").innerHTML = tableBody;
+        }
+
+        function loadData() {
+          // Spreadsheet ID
+          const spreadsheetId = "1Z-3EnJrvw5aLGrDyqw4cJqKsEa32PrmSEoxUdyD3d70";
+          const range = "A:Z";
+          getPublicValues({ spreadsheetId, range }, displayResult2);
+        }
+
+        window.addEventListener("load", (e) => {
+          initOAuthClient({ apiKey: API_KEY });
+        });
+
+        document.addEventListener("gapi-loaded", (e) => {
+          loadData();
+        });
+      }
+    }
+  </script>
+
+
+<!-- 
+<script>
+    window.addEventListener("scroll", function () {
+       let header = document.getElementById("scrollop");
+       let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+       header.style.opacity = 0.1+(scrollTop / 500);
+    });
+ </script> -->
+</body>
+
+</html>
